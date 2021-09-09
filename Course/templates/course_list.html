@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #trainers {
+         font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+       }
+       
+       #trainers td, #trainers th {
+         border: 1px solid rgb(15, 15, 15);
+         padding: 8px;
+       }
+       
+       #trainers tr:nth-child(even){background-color: #f2f2f2be;}
+       
+       #trainers tr:hover {background-color: rgba(221, 221, 221, 0.192);}
+       
+       #trainers th {
+         /* padding-top: 12px; */
+         padding-bottom: 12px;
+         text-align: left;
+         background-color: rgb(53, 19, 48);
+         color:rgb(250, 244, 244);
+       }
+           
+          
+           
+     h1{
+        text-align: center;
+        color: black;
+     }
+    </style> 
+    <h1>Course List Data</h1>      
+    
+     <table id="trainers">
+        <tr>
+        <th>Course Name</th>
+        <th>Syllabus</th>
+        <th>Course Code</th>
+        <th>Course Trainer</th>
+        <th>Course Duration</th>
+        
+        </tr>
+        
+        <tr>
+            {% for course in courses %}
+
+            <td>{{course.course_name}}</td>
+            <td>{{course.syllabus}}</td>
+            <td>{{course.course_code}}</td>
+            <td>{{course.course_trainer}}</td>
+            <td>{{course.course_duration}}</td>
+            
+            
+             </tr>
+        {% endfor %}
+    </table> 
+
+    
+ </body>
+</html> 
+

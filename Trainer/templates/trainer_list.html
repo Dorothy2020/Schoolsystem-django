@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        img{
+
+height: 50px;
+width: 50px;
+}
+        #trainers {
+         font-family: Arial, Helvetica, sans-serif;
+         border-collapse: collapse;
+         width: 100%;
+       }
+       
+       #trainers td, #trainers th {
+         border: 1px solid rgb(15, 15, 15);
+         padding: 8px;
+       }
+       
+       #trainers tr:nth-child(even){background-color: #f2f2f2be;}
+       
+       #trainers tr:hover {background-color: rgba(221, 221, 221, 0.192);}
+       
+       #trainers th {
+         padding-top: 12px;
+         padding-bottom: 12px;
+         text-align: left;
+         background-color: rgb(110, 68, 103);
+         color:rgb(235, 229, 229);
+       }
+           
+          
+           
+     h1{
+        text-align: center;
+        color: black;
+        
+           }
+    </style> 
+    <h1>Trainer List Data</h1>      
+    
+     <table id="trainers">
+        <tr>
+        <th>Profile</th>
+        <th>Edit</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Profession</th>
+        <th>Phone Number</th>
+        <th>Contract</th>
+        <th>Gender</th>
+        <th>Biography</th>
+        <th>Image</th>
+       
+
+
+        </tr>
+        
+        <tr>
+            {%for trainer in trainers %}
+
+            <td><a href="{% url 'trainer_profile' id=trainer.id  %}"> Profile</a></td>
+            <td><a href="{% url 'edit_trainer' id=trainer.id  %}"> Edit</a></td>
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.email}}</td>
+            <td>{{trainer.profession}}</td>
+            <td>{{trainer.phone_number}}</td>
+            <td>{{trainer.contract}}</td>
+            <td>{{trainer.gender}}</td>
+            <td>{{trainer.biography}}</td>
+            <td><img src="{{trainer.image.url}}"></td> 
+            {% if trainer.image  %}
+             
+
+            {% endif %}
+            
+        
+        </tr>
+        {% endfor %}
+    </table> 
+
+    
+ </body>
+</html> 
+

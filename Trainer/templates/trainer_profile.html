@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer Profile</title>
+</head>
+<body>
+    <div class="profile">
+    <img src="{{ trainer.image.url}}">
+    <h2>{{ trainer.first_name }}</h2>
+    <h2>{{ trainer.last_name }} </h2>
+    <h2>{{trainer.email}}</h2>
+   
+    
+
+
+    </div>
+<style>
+    .profile{
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 30px;
+        height: 530px;
+        width: 400px;
+        margin-left: 500px;
+        text-align: center;
+        background-color: rgb(102, 57, 102);
+    }
+    img{
+        padding-top: 10px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    h2{
+        font-size: 25px;
+    }
+
+</style>
+    
+
+
+
+</body>
+</html>
